@@ -31,6 +31,11 @@ if (checkName($name)) {
   header('Refresh:3 url=register.php');
   exit();
 }
+if (checkAccount($account)) {
+  echo '帳號已重複！請更換另一個。將返回註冊畫面...';
+  header('Refresh:3 url=register.php');
+  exit();
+}
 
 if (insertAccount($name, $account, $password)) {
   echo '註冊成功！即將返回登入畫面...';
