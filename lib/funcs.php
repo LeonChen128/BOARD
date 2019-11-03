@@ -126,3 +126,17 @@ function getArticle() {
     return [];
   }
 }
+
+function searchArticle($keyword) {
+  $pdo = newPDO();
+  if (!$pdo) {
+    return [];
+  }
+  try {
+    $sql = $pdo->prepare('SELECT * FROM Article WHERE title like ?');
+    $sql->execute(['%' . $keyword . '%']);
+    return $sql->fetchAll();
+  } catch (PDOException $e) {
+    return [];
+  }
+}
