@@ -95,19 +95,34 @@ function checkLogin ($account, $password) {
 }
 
 function getWeekDay() {
+  date_default_timezone_set('Asia/Taipei');  
   $day = [
-    '0' => '禮拜六',
-    '1' => '禮拜日',
-    '2' => '禮拜一',
-    '3' => '禮拜二',
-    '4' => '禮拜三',
-    '5' => '禮拜四',
-    '6' => '禮拜五',    
+    'Saturday'  => '禮拜六',
+    'Sunday'    => '禮拜日',
+    'Monday'    => '禮拜一',
+    'Tuesday'   => '禮拜二',
+    'Wednesday' => '禮拜三',
+    'Thursday'  => '禮拜四',
+    'Friday'    => '禮拜五',    
   ];
-  return $day[date('I')];
+  return $day[date('l')];
 }
 
 function getDateTime() {
   date_default_timezone_set('Asia/Taipei');
   return date('Y年m月d日') . '  ' . getWeekDay() . '  ' . date('h:i:sa');
+}
+
+function getArticle() {
+  $pdo = newPDO();
+  if (!$pdo) {
+    return [];
+  }
+  try {
+    $sql = $pdo->prepare('SELECT * FROM Article');
+    $sql->execute();
+    return $sql->fetchAll();
+  } catch (PDOException $e) {
+    return [];
+  }
 }
