@@ -29,7 +29,7 @@
 }
 
 .text_title {
-  width:800px;
+  width:1020px;
   height:30px;
   border-radius:3px;
   border:1px solid rgba(222,222,222,1);
@@ -42,7 +42,7 @@
 }
 
 .text_content {
-  width:800px;
+  width:1020px;
   height:500px;
   border-radius:3px;
   border:1px solid rgba(222,222,222,1);
@@ -56,5 +56,5 @@
   font-size:20px;
   border-radius:3px;
   background-color:rgba(4,122,175,1);
-  margin:10px 0 0 980px;
+  margin:10px 0 0 1090px;
 }

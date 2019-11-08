@@ -160,5 +160,18 @@ function insertArticle($title, $content, $author, $date) {
   } catch (PDOException $e) {
     return [];
   }
+}
 
+function getContent($id) {
+  $pdo = newPDO();
+  if (!$pdo) {
+    return [];
+  }
+  try {
+    $sql = $pdo->prepare('SELECT * FROM Article WHERE id = ?');
+    $sql->execute([$id]);
+    return $sql->fetchAll();
+  } catch (PDOException $e) {
+    return [];
+  }
 }
