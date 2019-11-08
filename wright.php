@@ -1,6 +1,12 @@
 <?php
 include 'lib/define.php';
 include 'lib/funcs.php';
+
+if (!isset($_SESSION['user']['name'])) {
+  echo 'error';
+  header('Refresh:3 url=index.php');
+  exit();
+}
 ?>
 
 
@@ -24,7 +30,7 @@ include 'lib/funcs.php';
     <p class="time_table">
       <?php echo getDateTime() ?>
     </p>
-    <form action="wrigjt2.php" method="post">
+    <form action="wright2.php" method="post">
       <div class="title">
         <input type="text" name='title' placeholder="請填寫標題..." class="text_title">
       </div>

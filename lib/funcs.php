@@ -113,6 +113,11 @@ function getDateTime() {
   return date('Y年m月d日') . '  ' . getWeekDay() . '  ' . date('h:i:sa');
 }
 
+function insertDate() {
+  date_default_timezone_set('Asia/Taipei');
+  return date('Y/m/d h:i a');
+}
+
 function getArticle() {
   $pdo = newPDO();
   if (!$pdo) {
@@ -139,4 +144,21 @@ function searchArticle($keyword) {
   } catch (PDOException $e) {
     return [];
   }
+}
+
+function insertArticle($title, $content, $author, $date) {
+  $pdo = newPDO();
+  if (!$pdo) {
+    return []; 
+  }
+  try {
+    $sql = $pdo->prepare('INSERT INTO Article VALUES(null, ?, ?, ?, ?)');
+    $sql->execute([$title, $content, $author, $date]);
+    $sql = $pdo->prepare('SELECT * FROM Article WHERE title = ? AND content = ? AND author = ? AND date = ?');
+    $sql->execute([$title, $content, $author, $date]);
+    return $sql->fetchAll();
+  } catch (PDOException $e) {
+    return [];
+  }
+
 }
