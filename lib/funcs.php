@@ -189,6 +189,19 @@ function insertMessage($author, $content, $date, $article_id) {
     return $sql->fetchAll();    
   } catch (PDOException $e) {
     return [];
+  } 
+}
+
+function getMessage($article_id) {
+  $pdo = newPDO();
+  if (!$pdo) {
+    return [];
   }
-  
+  try {
+    $sql = $pdo->prepare('SELECT * FROM Message WHERE article_id = ?');
+    $sql->execute([$article_id]);
+    return $sql->fetchAll();
+  } catch (PDOException $e) {
+    return [];
+  } 
 }

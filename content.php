@@ -76,6 +76,15 @@ foreach (getContent($_REQUEST['id']) as $content) {
     <div class="content_table">
       <?php echo $content['content'];?><br><br>
     </div>
+    <?php
+    foreach (getMessage($_REQUEST['id']) as $messages) {
+      echo '<div class="message_display">';
+      echo '<div class="message1">' . $messages['author'] . '：</div>';
+      echo '<div class="message2">' . $messages['content'] . '</div>';
+      echo '<div class="message3">' . $messages['date'] . '</div>';
+      echo '</div>';
+    }
+    ?>  
     <div class="message_table">
       <form action="message.php" method="post">
         <input type="text" name="message" placeholder="留言..." class="input_message">

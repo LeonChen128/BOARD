@@ -87,23 +87,42 @@
 }
 
 .input_message {
-display:inline-block;
-height:35px;
-width:960px;
-font-size:20px;
-float:left;
-border: 1px solid rgba(222,222,222,1);
-border-radius:3px;
+  display:inline-block;
+  height:35px;
+  width:960px;
+  font-size:20px;
+  float:left;
+  border: 1px solid rgba(222,222,222,1);
+  border-radius:3px;
 }
 
 .button_message {
-display:inline-block;
-height:35px;
-width:60px;
-font-size:14px;
-color:white;
-float:left;
-background-color:rgba(185,30,83,1);
-border: 1px solid rgba(222,222,222,1);
-border-radius:3px;
+  display:inline-block;
+  height:35px;
+  width:60px;
+  font-size:14px;
+  color:white;
+  float:left;
+  background-color:rgba(185,30,83,1);
+  border: 1px solid rgba(222,222,222,1);
+  border-radius:3px;
+}
+
+.message_display {
+  background-color:rgba(50,50,50,1);
+  color:white;
+  height:35px;
+  width:1020px;
+  margin-left:200px;
+  font-size:20px;
+  line-height:;
+}
+
+.message1, .message2, .message3 {
+  display:inline-block;
+
+}
+
+.message3 {
+  float:right;  
 }
