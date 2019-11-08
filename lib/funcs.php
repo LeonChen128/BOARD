@@ -175,3 +175,20 @@ function getContent($id) {
     return [];
   }
 }
+
+function insertMessage($author, $content, $date, $article_id) {
+  $pdo = newPDO();
+  if (!$pdo) {
+    return [];
+  }
+  try {
+    $sql = $pdo->prepare('INSERT INTO Message VALUES(null, ?, ?, ?, ?)');
+    $sql->execute([$author, $content, $date, $article_id]);
+    $sql = $pdo->prepare('SELECT * FROM Message WHERE author = ? AND content = ? AND date = ? AND article_id = ? ');
+    $sql->execute([$author, $content, $date, $article_id]);
+    return $sql->fetchAll();    
+  } catch (PDOException $e) {
+    return [];
+  }
+  
+}

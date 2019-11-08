@@ -22,9 +22,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 foreach (getContent($_REQUEST['id']) as $content) {
-
 }
-
 
 ?>
 
@@ -77,6 +75,13 @@ foreach (getContent($_REQUEST['id']) as $content) {
     </div>
     <div class="content_table">
       <?php echo $content['content'];?><br><br>
-    </div>  
+    </div>
+    <div class="message_table">
+      <form action="message.php" method="post">
+        <input type="text" name="message" placeholder="留言..." class="input_message">
+        <?php echo '<input type="hidden" name="id" value="' . $_REQUEST['id'] . '">';?>
+        <button type="submit" class="button_message">留言</button>
+      </form>
+    </div>      
   </body>  
 </html>

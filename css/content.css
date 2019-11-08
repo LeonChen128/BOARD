@@ -80,3 +80,30 @@
   font-size:20px;
   margin-left:200px;
 }
+
+.message_table {
+  margin-left:200px;
+  margin-top:10px;
+}
+
+.input_message {
+display:inline-block;
+height:35px;
+width:960px;
+font-size:20px;
+float:left;
+border: 1px solid rgba(222,222,222,1);
+border-radius:3px;
+}
+
+.button_message {
+display:inline-block;
+height:35px;
+width:60px;
+font-size:14px;
+color:white;
+float:left;
+background-color:rgba(185,30,83,1);
+border: 1px solid rgba(222,222,222,1);
+border-radius:3px;
+}
