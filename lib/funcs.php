@@ -118,7 +118,7 @@ function insertDate() {
   return date('Y/m/d h:i a');
 }
 
-function getArticle() {
+function getAllArticle() {
   $pdo = newPDO();
   if (!$pdo) {
     return [];
@@ -162,7 +162,7 @@ function insertArticle($title, $content, $author, $date) {
   }
 }
 
-function getContent($id) {
+function getArticle($id) {
   $pdo = newPDO();
   if (!$pdo) {
     return [];
@@ -204,4 +204,20 @@ function getMessage($article_id) {
   } catch (PDOException $e) {
     return [];
   } 
+}
+
+function updateArticle($title, $content, $date, $id) {
+  $pdo = newPDO();
+  if(!$pdo) {
+    return [];
+  }
+  try {
+    $sql = $pdo->prepare('UPDATE Article SET title=?, content=?, date=? WHERE id=?');
+    $sql->execute([$title, $content, $date, $id]);
+    $sql = $pdo->prepare('SELECT * FROM Article WHERE title=? AND content=? AND date=? AND id=?');
+    $sql->execute([$title, $content, $date, $id]);
+    return $sql->fetchAll();
+  } catch (PDOException $e) {
+    return [];
+  }
 }

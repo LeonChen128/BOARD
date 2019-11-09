@@ -59,7 +59,7 @@ if (!isset($_SESSION['user']['name'])) {
         echo '</div>';
       }      
     } else {
-      foreach (getArticle() as $articles) {  
+      foreach (getAllArticle() as $articles) {  
         echo '<div class="article_table">';
         echo '<b class="title_table">' . '<a href="content.php?id=' . $articles['id'] . '" class="link">' . $articles['title'] . '</a></b>';
         echo '<p class="content_table">' . '<a href="content.php?id=' . $articles['id'] . '" class="link2">' . $articles['content'] . '</a></p>';

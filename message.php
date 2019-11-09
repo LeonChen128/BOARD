@@ -15,7 +15,7 @@ if (!isset($_POST['message'])) {
   }
 }
 
-foreach (getContent($_POST['id']) as $content ){
+foreach (getArticle($_POST['id']) as $content ){
 }
 
 $author     = $_SESSION['user']['name'];

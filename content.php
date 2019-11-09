@@ -21,7 +21,7 @@ if (!isset($_SESSION['user'])) {
   exit();
 }
 
-foreach (getContent($_REQUEST['id']) as $content) {
+foreach (getArticle($_REQUEST['id']) as $content) {
 }
 
 ?>
