@@ -112,10 +112,11 @@
   background-color:rgba(50,50,50,1);
   color:white;
   height:35px;
-  width:1020px;
+  width:1010px;
   margin-left:200px;
   font-size:20px;
   line-height:;
+  padding:5px;
 }
 
 .message1, .message2, .message3 {
@@ -125,4 +126,16 @@
 
 .message3 {
   float:right;  
+}
+
+.edit {
+  text-decoration: none;
+  text-align:center;
+  float:right;
+  border: 1px solid rgba(220,220,220,1);
+  border-radius: 2px;
+  width:50px;
+  padding:3px;
+  color:red;
+  background:rgba(220,220,220,1);
 }

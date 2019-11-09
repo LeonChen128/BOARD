@@ -21,6 +21,11 @@ $author  = $_SESSION['user']['name'];
 $date    = insertDate();
 
 if ($title && $content) {
+  if (mb_strlen($title) > 30) {
+    echo '字數有誤，請重新確認';
+    header('Refresh:3 url=wright.php');
+    exit();
+  }
   if (insertArticle($title, $content, $author, $date)) {
     echo '發文成功，即將返回首頁...';
     header('Refresh:3 url=article.php');

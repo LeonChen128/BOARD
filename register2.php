@@ -37,6 +37,12 @@ if (checkAccount($account)) {
   exit();
 }
 
+if (mb_strlen($name) > 10 || mb_strlen($account) > 12 || mb_strlen($password) > 12) {
+  echo '字數有誤，請重新確認。將返回上一頁...';
+  header('Refresh:3 url=register.php');
+  exit();
+}
+
 if (insertAccount($name, $account, $password)) {
   echo '註冊成功！即將返回登入畫面...';
   header('Refresh:3 url=index.php');

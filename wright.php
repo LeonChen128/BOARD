@@ -32,7 +32,7 @@ if (!isset($_SESSION['user']['name'])) {
     </p>
     <form action="wright2.php" method="post">
       <div class="title">
-        <input type="text" name='title' placeholder="請填寫標題..." class="text_title">
+        <input type="text" name='title' placeholder="請填寫標題...(限於30字內)" class="text_title">
       </div>
       <div class="content">
         <textarea name="content" placeholder="請填寫內容..." class="text_content"></textarea>

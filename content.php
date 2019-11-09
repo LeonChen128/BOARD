@@ -69,12 +69,19 @@ foreach (getContent($_REQUEST['id']) as $content) {
       日期
     </div> 
     <div class="title_content">
-        <?php echo $content['title'] . '<br>';?>
-        <?php echo $content['author'] . '<br>';?>
-        <?php echo $content['date'];?>    
+        <?php
+        echo $content['title'];
+        if ($_SESSION['user']['name'] == $content['author']) {
+          echo '<a href="edit.php?id=' . $content['id'] . '" class="edit">編輯</a><br>';
+        } else {
+          echo '<br>';
+        }
+        echo $content['author'] . '<br>';
+        echo $content['date'];
+        ?>    
     </div>
     <div class="content_table">
-      <?php echo $content['content'];?><br><br>
+      <?php echo $content['content'];?><br><br><br>
     </div>
     <?php
     foreach (getMessage($_REQUEST['id']) as $messages) {
@@ -87,7 +94,7 @@ foreach (getContent($_REQUEST['id']) as $content) {
     ?>  
     <div class="message_table">
       <form action="message.php" method="post">
-        <input type="text" name="message" placeholder="留言..." class="input_message">
+        <input type="text" name="message" placeholder="留言...(限於20字內)" class="input_message">
         <?php echo '<input type="hidden" name="id" value="' . $_REQUEST['id'] . '">';?>
         <button type="submit" class="button_message">留言</button>
       </form>
