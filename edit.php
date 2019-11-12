@@ -32,6 +32,7 @@ foreach (getArticle($_REQUEST['id']) as $article){
     <link rel="stylesheet" type="text/css" href="css/edit.css">
   </head>
   <body class="background">
+    <script src="js/update.js"></script>
     <div class="header">
       <a class="header_word"><?php echo $_SESSION['user']['name']; ?></a>
       <a href="article.php" class="header_word">首頁</a>
@@ -44,18 +45,18 @@ foreach (getArticle($_REQUEST['id']) as $article){
     <form action="update.php" method="post">
       <div class="title">
         <?php
-        echo '<input type="text" name="title" class="text_title" value="' . $article['title'] . '">';
+        echo '<input type="text" name="title" id="_title" class="text_title" value="' . $article['title'] . '">';
         ?>
       </div>
       <div class="content">
         <?php
-        echo '<textarea name="content" class="text_content">' . $article['content'] . '</textarea>';
+        echo '<textarea name="content" id="_content" class="text_content">' . $article['content'] . '</textarea>';
         ?>
       </div>
       <?php
       echo '<input type="hidden" name="id" value="' . $_REQUEST['id'] . '">';
       ?>
-      <button type="submit" class="button">修改</button>
+      <button type="submit" class="button" onclick="return checkUpdate();">修改</button>
     </form>   
   </body>  
 </html>

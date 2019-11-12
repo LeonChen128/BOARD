@@ -40,6 +40,7 @@ foreach (getArticle($_REQUEST['id']) as $content) {
     <link rel="stylesheet" type="text/css" href="css/content.css">
   </head>
   <body class="background">
+    <script src="js/content.js"></script>
     <div class="header">
       <a class="header_word"><?php echo $_SESSION['user']['name']; ?></a>
       <a href="article.php" class="header_word">首頁</a>
@@ -94,9 +95,9 @@ foreach (getArticle($_REQUEST['id']) as $content) {
     ?>  
     <div class="message_table">
       <form action="message.php" method="post">
-        <input type="text" name="message" placeholder="留言...(限於20字內)" class="input_message">
+        <input type="text" name="message" id="_message" placeholder="留言...(限於20字內)" class="input_message">
         <?php echo '<input type="hidden" name="id" value="' . $_REQUEST['id'] . '">';?>
-        <button type="submit" class="button_message">留言</button>
+        <button type="submit" class="button_message" onclick="return checkMessage();">留言</button>
       </form>
     </div>      
   </body>  

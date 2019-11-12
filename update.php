@@ -26,12 +26,18 @@ if (mb_strlen($title) > 30) {
   exit();
 }
 
+if ($title == "" || $content == "") {
+  echo '欄位不得為空。將返回上一頁...';
+  header('Refresh:3 url=edit.php?id=' . $id);
+  exit();
+}
+
 if (updateArticle($title, $content, $date, $id)) {
-  echo '編輯成功！將返回頁面...';
+  echo '修改成功！將返回頁面...';
   header('Refresh:3 url=content.php?id=' . $id);
   exit();
 } else {
-  echo '編輯失敗！將返回上一頁...';
+  echo '修改失敗！將返回上一頁...';
   header('Refresh:3 url=edit.php?id=' . $id);
   exit();
 }

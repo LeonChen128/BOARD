@@ -29,6 +29,12 @@ if (mb_strlen($content) > 20) {
   exit();
 }
 
+if ($content == "") {
+  echo '留言欄不可空白。將返回上一頁...';
+  header('Refresh:3 url=content.php?id=' . $_POST['id']);
+  exit();
+}
+
 if (insertMessage($author, $content, $date, $article_id)) {
   echo '留言成功！即將返回頁面...';
   header('Refresh:3 url=content.php?id=' . $_POST['id']);

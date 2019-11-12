@@ -75,10 +75,11 @@
 
 .content_table {
   display:inline-block;
-  width:1020px;
+  width:1010px;
   background-color:rgba(219,232,219,1);
   font-size:20px;
   margin-left:200px;
+  padding:5px 5px;
 }
 
 .message_table {

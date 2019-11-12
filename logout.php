@@ -2,7 +2,7 @@
   <head>
     <meta http-equiv="Content-Language" content="zh-tw">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>留言板-首頁</title>
+    <title>留言板-登出</title>
     <link rel="stylesheet" type="text/css" href="css/article.css">
   </head>
   <body class="background">

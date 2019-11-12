@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body class="background">
+    <script src="js/login.js"></script>
     <div class="header">
       <a href="index.php" class="header_word">登入</a>
       <a href="register.php" class="header_word">註冊</a>
@@ -13,13 +14,13 @@
     <form action="login.php" method="post" class="form_card">
       <p>登入：</p>
       <div>
-        <input type="text" name="account" placeholder="請輸入帳號..." class="input_text">
+        <input type="text" name="account" id="_account" placeholder="請輸入帳號..." class="input_text">
       </div>
       <div>  
-        <input type="password" name="password" placeholder="請輸入密碼..." class="input_password">
+        <input type="password" name="password" id="_password" placeholder="請輸入密碼..." class="input_password">
       </div>
       <div>
-        <button type="submit" class="button">登入</button>
+        <button type="submit" class="button" onclick="return checkLogin();">登入</button>
       </div>  
       <p>還不是會員</p>
       <p><a href="register.php" class="member">加入會員</a> 
