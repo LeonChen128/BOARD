@@ -221,3 +221,19 @@ function updateArticle($title, $content, $date, $id) {
     return [];
   }
 }
+
+function deleteArticle($id) {
+  $pdo = newPDO();
+  if (!$pdo) {
+    return [];
+  }
+  try {
+    $sql = $pdo->prepare('DELETE FROM Article WHERE id = ?');
+    $sql->execute([$id]);
+    $sql = $pdo->prepare('SELECT * FROM Article WHERE id = ?');
+    $sql->execute([$id]);
+    return $sql->fetchAll();
+  } catch (PDOException $e) {
+    return [];
+  }
+}

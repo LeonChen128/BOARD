@@ -41,7 +41,7 @@ foreach (getArticle($_REQUEST['id']) as $article){
     </div> 
     <p class="time_table">
       <?php echo getDateTime() ?>
-    </p>
+    </p>  
     <form action="update.php" method="post">
       <div class="title">
         <?php
@@ -57,6 +57,12 @@ foreach (getArticle($_REQUEST['id']) as $article){
       echo '<input type="hidden" name="id" value="' . $_REQUEST['id'] . '">';
       ?>
       <button type="submit" class="button" onclick="return checkUpdate();">修改</button>
-    </form>   
+    </form>  
+    <form action="delete.php" method="post">
+      <?php
+      echo '<input type="hidden" name="id" value="' . $_REQUEST['id'] . '">';
+      ?>
+      <button type="submit" class="button_del">刪除文章</button>
+    </form> 
   </body>  
 </html>
