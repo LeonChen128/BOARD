@@ -8,8 +8,8 @@
   <body class="background">
     <script src="js/register.js"></script>
     <div class="header">
-      <a href="index.php" class="header_word">登入</a>
-      <a href="register.php" class="header_word">註冊</a>
+      <a href="index.php" class="header_word" id="_login" onmouseover="over('_login');" onmouseout="out('_login');">登入</a>
+      <a href="register.php" class="header_word" id="_register" onmouseover="over('_register');" onmouseout="out('_register');">註冊</a>
     </div>  
     <form action="register2.php" method="post" class="form_card">
       <p>會員註冊：</p>

@@ -43,9 +43,9 @@ foreach (getArticle($_REQUEST['id']) as $content) {
     <script src="js/content.js"></script>
     <div class="header">
       <a class="header_word"><?php echo $_SESSION['user']['name']; ?></a>
-      <a href="article.php" class="header_word">首頁</a>
-      <a href="wright.php" class="header_word">發文</a>
-      <a href="logout.php" class="header_word">登出</a>  
+      <a href="article.php" class="header_word" id="_home" onmouseover="over('_home');" onmouseout="out('_home');">首頁</a>
+      <a href="wright.php" class="header_word" id="_wright" onmouseover="over('_wright');" onmouseout="out('_wright');">發文</a>
+      <a href="logout.php" class="header_word" id="_logout" onmouseover="over('_logout');" onmouseout="out('_logout');">登出</a>  
     </div>
     <p class="time_table">
       <?php echo getDateTime() ?>
