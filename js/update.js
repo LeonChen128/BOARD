@@ -2,7 +2,7 @@
 function checkUpdate() {
   var title   = document.getElementById('_title').value
   var content = document.getElementById('_content').value
-  if (title =="" || content =="") {
+  if (title.trim() =="" || content.trin() =="") {
     window.alert('欄位不得為空');
     return false;
   }

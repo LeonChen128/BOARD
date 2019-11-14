@@ -4,7 +4,7 @@ function checkRegister() {
   var account    = document.getElementById('_account').value;
   var password   = document.getElementById('_password').value;
   var repassword = document.getElementById('_repassword').value;
-  if (name == '' || account == '' || password =='' || repassword =='') {
+  if (name.trim() == '' || account.trim() == '' || password.trim() =='' || repassword.trim() =='') {
     window.alert('欄位不得為空');
     return false;
   }

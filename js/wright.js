@@ -2,7 +2,7 @@
 function checkWright() {
   var title   = document.getElementById('_title').value;
   var content = document.getElementById('_content').value;
-  if (title == "" || content =="") {
+  if (title.trim() == "" || content.trim() =="") {
     window.alert('欄位不得空白');
     return false;
   }

@@ -1,7 +1,7 @@
 
 function checkMessage() {
   var message = document.getElementById('_message').value;
-  if (message == "") {
+  if (message.trim() == "") {
     window.alert('留言欄位不得空白');
     return false;
   }
